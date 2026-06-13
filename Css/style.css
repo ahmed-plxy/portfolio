@@ -1,0 +1,446 @@
+* { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background : linear-gradient(135deg, #0f1721, #020617);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 15px;
+      }
+      body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: -1; 
+}
+:root {
+  --bg: #0f0f10;
+  --surface: rgba(255,255,255,0.06);
+  --surface-2: rgba(255,255,255,0.10);
+  --text: #f5f5f5;
+  --muted: #a1a1aa;
+  --accent: #ef4444;
+  --accent-2: #22d3ee;
+  --border: 1px solid rgba(255,255,255,0.08);
+  --box-s: 0 3px 15px rgba(255,255,255,0.07);
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.header {
+  padding: 0px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  z-index: 998;
+  background : linear-gradient(135deg, #0f1721, #020617);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.2px 1px #3b82f6;
+  border-bottom: 0.012px solid #3b82f6; 
+}
+
+.header .container {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.p-ahmed {
+  font-weight: 900;
+  font-size:18px;
+  color: #3b82f6;
+  transition: transparent 0.3s ease;
+}
+.p-ahmed:hover {
+  transform: translateY(-4px);
+  opacity: 0.92;
+}
+.header .linkes {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header .linkes.open .ul {
+  display: block !important;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 20px;
+  line-height: 1;
+}
+.menu-icon:focus {
+  outline: none;
+}
+
+.header .linkes ul {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  min-width: 220px;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background: #18181b;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+
+.header .linkes ul::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 18px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #18181b transparent;
+}
+
+.header .linkes ul li a {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #f5f5f5;
+  transition: 0.25s;
+}
+
+.header .linkes ul li a:hover {
+  background: rgba(255,255,255,0.06);
+  padding-left: 22px;
+}
+
+.header .linkes ul li:not(:last-child) a {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.pf-card {
+  width: min(100%, 620px);
+  background: rgba(10, 15, 20,0.6);
+  border: var(--border);
+  box-shadow: 0 0 20px 0px rgba(255,255,255,0.1);
+  border-radius: 13px;
+  overflow: hidden;
+  margin: 100px auto 0;
+  padding-top: 0;
+  transition: transform 0.3s ease;
+}
+.pf-card:hover {
+  transform: translateY(-10px);
+}
+.pf-card .container {
+  width: 100%;
+  padding: 22px 18px;
+}
+.up {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.down {
+  text-align: center;
+}
+
+.down p {
+/*  margin: 0 5px 0px;*/
+  padding-top: 15px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cccccc;
+  text-align: left;
+}
+
+.highlit-name {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+}
+
+.prog {
+ color: var(--accent-2); 
+}
+.hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.7), transparent);
+  margin: 20px 0;
+}
+
+}
+.up > div p {
+  margin: 0;
+}
+.about-card {
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);*/
+    box-shadow: 0 0 20px 0px rgba(255,255,255,0.1);
+}
+
+.card-header {
+    background: rgba(10, 15, 20,0.6);
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: #E2E8F0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.card-content {
+    padding: 30px;
+  background-color: white;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.015) 1px, transparent 1px);
+  background-size:
+    32px 32px,
+    32px 32px,
+    8px 8px,
+    8px 8px;
+    z-index: -4;
+}
+
+
+.badge {
+  display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    font-size: 22px;
+    box-shadow: 9 10px 7px black;
+}
+.card-content p {
+  padding-left: 10px;
+  padding-right: 10px;
+    color: black;
+    line-height: 1.4;
+    font-size: 1rem;
+    margin: 0;
+}
+.hr-1 {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.7), transparent);
+  margin: 10px 0px;
+}
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-top: 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  transition: 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.social-btn i {
+  font-size: 1.1rem;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.92;
+}
+
+.github {
+  background: #111827;
+}
+
+.linkedin {
+  background: #0a66c2;
+}
+
+.gmail {
+  background: #d14836;
+}
+.highlight {
+  color: #3b82f6;
+  font-weight: 850;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+}
+
+.header-R-container {
+  text-align: center;
+  margin: 0 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-inline:-15px;
+  position: relative;
+}
+
+.header-R-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.header-R-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+.R {
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 33%, #0033a0 33%, #0033a0 66%, #da291c 66%, #da291c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.russian-sub {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 1px;
+    color:#3b89f9;
+    -webkit-text-stroke: .5px ;
+}
+.russian-contienr {
+  margin-inline:-2px;
+  position: relative;
+  background:
+}
+
+.r-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+    margin-top:20px;
+}
+
+.r-card{
+    position:relative;
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    overflow:hidden;
+    transition:.3s;
+    text-align: center;
+}
+
+.r-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    background:linear-gradient(
+        90deg,
+        white,
+        #0057b7,
+        #d52b1e
+    );
+    transform:scaleX(0);
+    transition:.4s;
+}
+.r-card:hover::before{
+    transform:scaleX(1);
+}
+
+.r-card:hover{
+    transform:translateY(-8px);
+}
+.card-number{
+    position:absolute;
+    top:-10px;
+    right:15px;
+    font-size:5rem;
+    font-weight:800;
+    color:rgba(255,255,255,.04);
+    user-select:none;
+    -webkit-text-stroke: 1.5px ;
+}
+.r-card i {
+    font-size:2.5rem;
+    margin-bottom:10px;
+    color:#4f8cff;
+}
+.r-card h3{
+    margin-bottom: 18px;
+    font-size: 1.7rem;
+}
+.r-card p {
+  color: #E2E8F0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
